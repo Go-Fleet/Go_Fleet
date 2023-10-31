@@ -13,10 +13,13 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.1.6",
     "@expo/ngrok": "4.1.0",
     "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.0.2",
+    "axios": "^1.6.0",
     "expo": "~49.0.15",
+    "expo-constants": "*",
     "expo-font": "~11.4.0",
     "expo-linking": "~5.0.2",
     "expo-router": "^2.0.0",
@@ -24,6 +27,7 @@
     "expo-status-bar": "~1.6.0",
     "expo-system-ui": "~2.4.0",
     "expo-web-browser": "~12.3.2",
+    "metro": "~0.76.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.6",
