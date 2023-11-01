@@ -18,7 +18,7 @@ export default function TabOneScreen() {
         handleIndicatorStyle={{ display: 'none'}}>
           <Text style={styles.bottomSheetHeadline}>Winter Time Deals!</Text>
           <View style={styles.bottomsheetborder}> 
-          <Text style={styles.bottomSheetText}>Invite Friend for first Time, Recieve 15% off next Booking! </Text>
+          <Text style={styles.bottomSheetText}>Invite Friend for first Time, Receive 15% off next Booking! </Text>
           <Text style={styles.bottomSheetText}>Receive 15% off your first weekly booking! </Text>
 </View>
       </BottomSheet>
