@@ -5,7 +5,7 @@ import BottomSheet from '@gorhom/bottom-sheet';
 
 
 export default function TabOneScreen() {
-  const snapPoints = useMemo(() => ['8%', '80%'], []);
+  const snapPoints = useMemo(() => ['8%', '40%'], []);
   return (
     
     <View style={styles.container}>
