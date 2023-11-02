@@ -1,8 +1,7 @@
 import { Pressable, StyleSheet } from 'react-native';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Text, View } from '../../components/Themed';
 import BottomSheet from '@gorhom/bottom-sheet';
-
 
 
 export default function TabOneScreen() {
@@ -10,6 +9,7 @@ export default function TabOneScreen() {
   const onPress = () => {
       alert('Button pressed!');
      };
+     const [checked, setChecked] = useState(false);
 
   return (
     
@@ -21,6 +21,25 @@ export default function TabOneScreen() {
       <Pressable onPress={onPress} style={styles.googlemaps}>
         <Text style={styles.text}>Google Maps</Text>
       </Pressable>
+      
+      <Pressable onPress={onPress} style={styles.bookingbutton}>
+        <Text style={styles.text}>From:    December 9, 11:30 AM</Text>
+        <Text style={styles.text}>To:         December 29, 8:30 PM</Text>
+      </Pressable>
+
+
+      <View style={styles.wrapper}>
+        <Text style={styles.subtext}>Same Return & Delivery Location?</Text>
+        
+        <Pressable
+        style={[
+          styles.checkbox,
+          { backgroundColor: checked ? '#7AA04A' : '#666' },
+        ]}
+        onPress={() => setChecked(!checked)}
+      />
+     
+   </View>
       <Pressable onPress={onPress} style={styles.bookingbutton}>
         <Text style={styles.text}>Choose a Location</Text>
       </Pressable>
@@ -71,6 +90,12 @@ const styles = StyleSheet.create({
     marginVertical: 40,
     backgroundColor: 'gray',
   },
+  wrapper: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    fontSize: 12,
+  },
   bookingbutton:{
     backgroundColor: 'rgba(122, 122, 122, 0.2)',
     padding: 10,
@@ -91,6 +116,19 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: 18,
+   },
+   subtext: {
+    fontSize: 10,
+    color: '#fff',
+    marginLeft: 140,
+   },
+   checkbox: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 7,
    },
 
   bottomSheetHeadline: {
