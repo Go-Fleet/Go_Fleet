@@ -4,6 +4,9 @@ import { Text, View } from '../../components/Themed';
 import BottomSheet from '@gorhom/bottom-sheet';
 
 
+import Colors from '../../constants/Colors';
+
+
 export default function TabOneScreen() {
   const snapPoints = useMemo(() => ['8%', '40%'], []);
   const onPress = () => {
@@ -11,6 +14,8 @@ export default function TabOneScreen() {
      };
      const [checked, setChecked] = useState(false);
 
+
+    
   return (
     
     <View style={styles.container}>
@@ -24,7 +29,7 @@ export default function TabOneScreen() {
       
       <Pressable onPress={onPress} style={styles.bookingbutton}>
         <Text style={styles.text}>From:    December 9, 11:30 AM</Text>
-        <Text style={styles.text}>To:         December 29, 8:30 PM</Text>
+        <Text style={styles.text}>      To:    December 29, 8:30 PM</Text>
       </Pressable>
 
 
@@ -47,9 +52,8 @@ export default function TabOneScreen() {
         <Text style={styles.text}>Choose a Vehicle Type</Text>
       </Pressable>
       <Pressable onPress={onPress} style={styles.button}>
-        <Text style={styles.text}>Get Booking Results</Text>
-      </Pressable>
-
+ <Text style={styles.text}>Get Booking Results</Text>
+</Pressable>
 
 
       <BottomSheet 
@@ -114,7 +118,7 @@ const styles = StyleSheet.create({
     width: '86%',
   },
   text: {
-    color: '#fff',
+    color: '#000',
     fontSize: 18,
    },
    subtext: {
@@ -135,7 +139,8 @@ const styles = StyleSheet.create({
     fontSize: 19,
     paddingLeft: 10,
     paddingBottom: 25,
-    color: '#82AD4B',},
+    color: '#82AD4B',
+    marginLeft: 120,},
   bottomSheetText: {
     color: '#82AD4B',
     paddingLeft: 10,
