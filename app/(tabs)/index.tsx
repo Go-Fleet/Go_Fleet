@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet, useColorScheme } from 'react-native';
 import { useMemo, useState } from 'react';
 import { Text, View } from '../../components/Themed';
 import BottomSheet from '@gorhom/bottom-sheet';
@@ -8,6 +8,9 @@ import Colors from '../../constants/Colors';
 
 
 export default function TabOneScreen() {
+  const colorScheme = useColorScheme() ?? 'light';
+
+
   const snapPoints = useMemo(() => ['8%', '40%'], []);
   const onPress = () => {
       alert('Button pressed!');
@@ -27,14 +30,15 @@ export default function TabOneScreen() {
         <Text style={styles.text}>Google Maps</Text>
       </Pressable>
       
-      <Pressable onPress={onPress} style={styles.bookingbutton}>
+      <Pressable onPress={onPress} 
+      style={[styles.bookingbutton,{ backgroundColor: Colors[colorScheme].secondaryBackground },]}>
         <Text style={styles.text}>From:    December 9, 11:30 AM</Text>
         <Text style={styles.text}>      To:    December 29, 8:30 PM</Text>
       </Pressable>
 
 
       <View style={styles.wrapper}>
-        <Text style={styles.subtext}>Same Return & Delivery Location?</Text>
+        <Text style={[styles.bookingbutton,{ color: Colors[colorScheme].text },]}>Same Return & Delivery Location?</Text>
         
         <Pressable
         style={[
@@ -45,13 +49,15 @@ export default function TabOneScreen() {
       />
      
    </View>
-      <Pressable onPress={onPress} style={styles.bookingbutton}>
+      <Pressable onPress={onPress} 
+        style={[styles.bookingbutton,{ backgroundColor: Colors[colorScheme].secondaryBackground },]}>
         <Text style={styles.text}>Choose a Location</Text>
       </Pressable>
-      <Pressable onPress={onPress} style={styles.bookingbutton}>
+      <Pressable onPress={onPress} 
+      style={[styles.bookingbutton,{ backgroundColor: Colors[colorScheme].secondaryBackground },]}>
         <Text style={styles.text}>Choose a Vehicle Type</Text>
       </Pressable>
-      <Pressable onPress={onPress} style={styles.button}>
+      <Pressable onPress={onPress} style={[styles.button, { backgroundColor: Colors[colorScheme].bookingResultsColor },]}>
  <Text style={styles.text}>Get Booking Results</Text>
 </Pressable>
 
@@ -101,7 +107,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   bookingbutton:{
-    backgroundColor: 'rgba(122, 122, 122, 0.2)',
     padding: 10,
     borderRadius: 5,
     alignItems: 'center',
