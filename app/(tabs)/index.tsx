@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, useColorScheme } from 'react-native';
 import { useMemo, useState } from 'react';
 import { Text, View } from '../../components/Themed';
 import BottomSheet from '@gorhom/bottom-sheet';
+import { Image } from 'react-native';
 
 
 import Colors from '../../constants/Colors';
@@ -25,6 +26,7 @@ export default function TabOneScreen() {
       <View style={styles.header}>
       
       <Text style={styles.title}>Welcome,</Text>
+      <Image style={styles.image} source={require('../../assets/images/ProfilePic.png')} />
       </View>
       <Pressable onPress={onPress} style={styles.googlemaps}>
         <Text style={styles.text}>Google Maps</Text>
@@ -85,17 +87,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    width: '82%',
+    flexDirection: 'row',
+   justifyContent: 'space-between',
+    width: '90%',
     marginBottom: 40,
   },
   title: {
     fontSize: 26,
+    flex: 1,
+  },
+  image: {
+    width: 35,
+    height: 35,
   },
   googlemaps: {
     paddingHorizontal: 10,
     paddingVertical: 26,
     borderRadius: 5,
     width: '86%',
+    marginHorizontal: '14%',
     paddingTop: 40,
     marginVertical: 40,
     backgroundColor: 'gray',
